@@ -4,7 +4,7 @@ const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const Note = require('./db/db');
+const Notes = require('./db/db');
 
 const app = express();
 
