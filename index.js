@@ -26,8 +26,10 @@ app.use(methodOverride('_method'));
 mongoose.connect('mongodb://localhost:27017/note')
 .then(() => {console.log('connected to db')}).catch((e) => console.log('error to connect db', e));
 
-app.get('/', (req, res) => {
-    res.render('routes/index.ejs');
+app.get('/', async(req, res) => {
+    const all_note = await Notes.find({});
+    console.log(all_note);
+    res.render('routes/index.ejs', {all_note});
 })
 
 app.post('/note', async(req, res) => {
@@ -42,10 +44,9 @@ app.put('/note/:id', async(req, res) => {
     const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
     res.json({msg: 'Note Updated'});
 })
-app.get("/note", async(req, res) => {
-    const all_note = await Notes.find({});
-    res.json({all_note});
-});
+// app.get("/note", async(req, res) => {
+    
+// });
 app.delete("/note/:id", async(req, res) => {
     const id = req.params.id;
     const deletedNote = await Notes.findByIdAndDelete(id);

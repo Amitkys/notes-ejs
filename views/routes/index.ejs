@@ -8,19 +8,30 @@
               <tr class="divide-x divide-gray-200 dark:divide-neutral-700">
                 <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Date</th>
                 <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Title</th>
-                <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Action</th>
+                <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Action</th>
                 <!-- <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Action</th> -->
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
-              <tr>
+                <% for(data of all_note) { %>
+                    <% const formattedDate = data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short'  }); %>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200"><%= formattedDate%></td>
+                        <td class="px-10 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200"><%=data.title %></td>
+                        <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">New York No. 1 Lake Park</td> -->
+                        <td class="px-6 py-4 whitespace-nowrap text-center  text-sm font-medium">
+                            <button type="button" class="py-1 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-green-600 text-black hover:bg-green-700 focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">Small</button>
+                        </td>
+                      </tr>
+                    <% } %>
+              <!-- <tr>
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">18 Jun</td>
                 <td class="px-10 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">my birthday</td>
-                <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">New York No. 1 Lake Park</td> -->
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">New York No. 1 Lake Park</td> 
                 <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                   <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:text-blue-400">Delete</button>
                 </td>
-              </tr>
+              </tr> -->
   
             </tbody>
           </table>

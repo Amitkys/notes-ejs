@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Meeting Notes",
+        "note": "Discussed the new project timeline and budget allocation."
+    },
+    {
+        "title": "Grocery List",
+        "note": "Buy milk, bread, eggs, and coffee."
+    },
+    {
+        "title": "Todo for Monday",
+        "note": "Finish the report and prepare for the client meeting."
+    },
+    {
+        "title": "Book Ideas",
+        "note": "A mystery novel set in an ancient library with hidden rooms."
+    },
+    {
+        "title": "Workout Routine",
+        "note": "Start with cardio, then focus on strength training and stretching."
+    },
+    {
+        "title": "Recipe Notes",
+        "note": "Add a pinch of salt and let the sauce simmer for 20 minutes."
+    },
+    {
+        "title": "Travel Plans",
+        "note": "Visit Paris, Rome, and Amsterdam next summer."
+    },
+    {
+        "title": "App Feature Ideas",
+        "note": "Include a dark mode, customizable dashboard, and notification alerts."
+    },
+    {
+        "title": "Learning Goals",
+        "note": "Master JavaScript ES6 features and learn React hooks."
+    },
+    {
+        "title": "Project Roadmap",
+        "note": "Phase 1: Research and planning. Phase 2: Development and testing."
+    }
+]
