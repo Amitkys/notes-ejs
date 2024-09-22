@@ -22,7 +22,9 @@ app.use(methodOverride('_method'));
 // ........................................................................
 
 
-
+app.get('/', (req, res) => {
+    res.render('routes/index.ejs');
+})
 
 
 app.listen(3000, () => console.log('listening on 3000'));
