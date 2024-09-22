@@ -28,8 +28,15 @@ mongoose.connect('mongodb://localhost:27017/note')
 
 app.get('/', async(req, res) => {
     const all_note = await Notes.find({});
-    console.log(all_note);
+    // console.log(all_note);
     res.render('routes/index.ejs', {all_note});
+})
+app.get('/note/:id', async(req, res) => {
+    const id = req.params.id;
+    const note = await Notes.findById(id);
+    // console.log(note);
+    // res.json({note});
+    // res.send('routes/1note.ejs', {note});
 })
 
 app.post('/note', async(req, res) => {
