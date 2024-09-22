@@ -31,35 +31,30 @@ app.get('/', async(req, res) => {
     // console.log(all_note);
     res.render('routes/index.ejs', {all_note});
 })
-app.get('/note/:id', async(req, res) => {
-    const id = req.params.id;
-    const note = await Notes.findById(id);
-    // console.log(note);
-    // res.json({note});
-    // res.send('routes/1note.ejs', {note});
-})
 
-app.post('/note', async(req, res) => {
-    const newNote = {title: req.body.title, note: req.body.note};
-    const createdNote = await Notes.create(newNote);
-    // console.log(createdNote);
-    res.json({msg: 'notes created', noteId: createdNote._id});
-})
-app.put('/note/:id', async(req, res) => {
-    const id = req.params.id;
-    const newNote = {title: req.body.title, note: req.body.note};
-    const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
-    res.json({msg: 'Note Updated'});
-})
-// app.get("/note", async(req, res) => {
-    
-// });
-app.delete("/note/:id", async(req, res) => {
-    const id = req.params.id;
-    const deletedNote = await Notes.findByIdAndDelete(id);
-    res.json({msg: 'notes delete'});
 
-})
+// app.post('/note', async(req, res) => {
+//     const newNote = {title: req.body.title, note: req.body.note};
+//     const createdNote = await Notes.create(newNote);
+//     // console.log(createdNote);
+//     res.json({msg: 'notes created', noteId: createdNote._id});
+// })
+// app.get('/note/:id', async(req, res) => {
+//     res.render('/routes/singleNote.ejs')
+// })
+// app.put('/note/:id', async(req, res) => {
+//     const id = req.params.id;
+//     const newNote = {title: req.body.title, note: req.body.note};
+//     const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
+//     res.json({msg: 'Note Updated'});
+// })
+
+// app.delete("/note/:id", async(req, res) => {
+//     const id = req.params.id;
+//     const deletedNote = await Notes.findByIdAndDelete(id);
+//     res.json({msg: 'notes delete'});
+
+// })
 
 
 

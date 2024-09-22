@@ -2,8 +2,3 @@ body{
     font-family: 'Satoshi', sans-serif;
     background-color: black;
 }
-/* Animation effect when clicked */
-.animated-button:active {
-    transform: scale(0.9); /* Shrinks the button */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow for feedback */
-  }

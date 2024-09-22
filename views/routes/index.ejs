@@ -6,21 +6,21 @@
           <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
             <thead>
               <tr class="divide-x divide-gray-200 dark:divide-neutral-700">
-                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Date</th>
-                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Title</th>
-                <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Action</th>
-                <!-- <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Action</th> -->
+                <th scope="col" class="px-6 py-3 text-start text-sm font-medium text-gray-500 uppercase dark:text-neutral-500">Date</th>
+                <th scope="col" class="px-6 py-3 text-start text-sm font-medium text-gray-500 uppercase dark:text-neutral-500">Title</th>
+                <th scope="col" class="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase dark:text-neutral-500">Action</th>
+                <!-- <th scope="col" class="px-6 py-3 text-end text-sm font-medium text-gray-500 uppercase dark:text-neutral-500">Action</th> -->
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
                 <% for(data of all_note) { %>
                     <% const formattedDate = data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short'  }); %>
                     <tr>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200"><%= formattedDate%></td>
-                        <td class="px-10 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200"><%=data.title %></td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm lg:text-lg font-medium text-gray-800 dark:text-neutral-200"><%= formattedDate%></td>
+                        <td class="px-10 py-4 whitespace-nowrap text-sm lg:text-lg  text-gray-800 dark:text-neutral-200"><%=data.title %></td>
                         <!-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">New York No. 1 Lake Park</td> -->
-                        <td class="px-6 py-4 whitespace-nowrap text-center  text-sm font-medium">
-                            <a href="note"></a>
+                        <td class="px-6 py-4 whitespace-nowrap text-center  text-sm  font-medium">
+                            <button type="button" class="transition-transform duration-200 opacity-90 active:scale-90 px-2 lg:px-4  py-1 bg-green-600 rounded-lg hover:bg-green-700">Small</button>
                         </td>
                       </tr>
                     <% } %>
