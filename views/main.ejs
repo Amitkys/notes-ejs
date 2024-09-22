@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body data-mode="dark">
+    
+    
+        <%- include('parts/navbar.ejs') %>
+
+        <div>
+            <%- body -%>
+        </div>
+
+
+        <%- include('parts/footer.ejs'); %>
+
+    <script src="/index.js"></script>
+    <script src="/preline/dist/preline.js"></script>
+</body>
+</html>
