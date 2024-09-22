@@ -22,12 +22,7 @@ app.use(methodOverride('_method'));
 // ........................................................................
 
 
-app.get('/kys', (req, res) => {
-    res.render('routes/index.ejs');
-});
-app.get('/kys2', (req, res) => {
-    res.render('routes/index2.ejs');
-})
+
 
 
 app.listen(3000, () => console.log('listening on 3000'));
