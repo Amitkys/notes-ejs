@@ -6,12 +6,11 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-
+// .......................................................................
 // Middleware to parse URL-encoded bodies (form data)
 app.use(bodyParser.urlencoded({ extended: true }));
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
-
 
 // Set view engine and views directory
 app.set('view engine', 'ejs');
@@ -20,6 +19,7 @@ app.engine('ejs', ejsMate);
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, './public')));
 app.use(methodOverride('_method'));
+// ........................................................................
 
 
 app.get('/kys', (req, res) => {
