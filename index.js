@@ -3,8 +3,6 @@ const path = require('path');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
-// const expressLayouts = require('express-ejs-layouts');
-// const expressEjsLayouts = require('express   -ejs-layouts');
 
 const app = express();
 
@@ -13,7 +11,6 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
-// app.use(expressEjsLayouts);
 
 
 // Set view engine and views directory
