@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const engine = require('ejs-mate');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Notes = require('./db/db');
 const app = express();
@@ -12,6 +13,11 @@ app.set('view engine', 'ejs'); // Set EJS as the view engine
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 app.get('/kys', (req, res) => {
     res.render('routes/index.ejs');
@@ -29,6 +35,10 @@ app.get('/note/:id', async(req, res) => {
     const id = req.params.id;
     const data = await Notes.findById(id);
     res.render('routes/singleData.ejs', {data})
+})
+
+app.get('/create', (req, res) => {
+    res.render('routes/create.ejs');
 })
 
 app.post('/note', async(req, res) => {
