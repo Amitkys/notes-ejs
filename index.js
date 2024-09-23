@@ -3,6 +3,7 @@ const path = require('path');
 const engine = require('ejs-mate');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+var methodOverride = require('method-override')
 const Notes = require('./db/db');
 const app = express();
 
@@ -18,6 +19,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'))
 
 app.get('/kys', (req, res) => {
     res.render('routes/index.ejs');
@@ -47,7 +50,7 @@ app.post('/note', async(req, res) => {
 
    res.redirect('/');
 })
-// update
+// update form with data
 app.get('/update/:id', async(req, res) => {
     const id = req.params.id;
     const data = await Notes.findById(id);
@@ -55,6 +58,16 @@ app.get('/update/:id', async(req, res) => {
     // const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
     res.render('routes/update.ejs', {data})
 })
+app.put('/note/:id', async(req, res) => {
+    const id = req.params.id;
+    // const data = await Notes.findById(id);
+    const newNote = {title: req.body.title, note: req.body.note};
+    // console.log(id, newNote);
+    const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
+    res.redirect('/');
+})
+// updating form with new data
+
 app.get("/note", async(req, res) => {
     const all_note = await Notes.find({});
     res.json({all_note});
