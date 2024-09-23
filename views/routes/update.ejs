@@ -2,8 +2,9 @@
 <% layout('./boilerplate') -%>
 <% layout('./boilerplate') -%>
 <% layout('./boilerplate') -%>
+<% layout('./boilerplate') -%>
 <div class="flex justify-center items-center min-h-screen">
-    <form action="" class="bg-slate-600 p-6 rounded shadow-md">
+    <form action="" class="bg-slate-600 p-3 rounded-2xl shadow-md">
         <label for="title">Title</label> <br>
         <input
             type="text"
@@ -11,11 +12,15 @@
             class="input input-bordered input-info w-full max-w-xs" /> <br><br>
 
         <label for="note">Notes</label> <br>
-        <textarea
-            class="textarea textarea-info w-[500px]  overflow-hidden resize-none"
-            placeholder="Bio"
-            oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';"></textarea>
+        <div class="flex flex-col">
+            <textarea
+                class="textarea textarea-info w-[340px] lg:w-[480px] overflow-hidden resize-none"
+                placeholder="Bio"
+                oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';"></textarea>
+                <button class="btn btn-warning">Warning</button>
+        </div>
     </form>
 </div>
+
 
 
