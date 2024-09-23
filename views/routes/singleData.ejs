@@ -1,11 +1,41 @@
 <% layout('./boilerplate') -%>
+<%  
+    // Initialize a variable for the formatted date string
+    let last_time_update = 'Date not available';
+
+    // Check if data.updatedAt is a valid date
+    if (data.updatedAt) {
+        const date = new Date(data.updatedAt);
+
+        // Check if the date is valid
+        if (!isNaN(date.getTime())) { // isNaN checks if the date is valid
+            const formattedDate = date.toLocaleDateString('en-US', {
+                month: 'short',  // Abbreviated month name (e.g., "Sep")
+                day: 'numeric',  // Day of the month (e.g., "18")
+                year: 'numeric'  // Full year (e.g., "2024")
+            });
+
+            const formattedTime = date.toLocaleTimeString('en-US', {
+                hour: 'numeric',    // Hour (e.g., "5")
+                minute: 'numeric',  // Minutes (e.g., "24")
+                second: 'numeric',  // Seconds (e.g., "30")
+                hour12: true        // Use 12-hour time with AM/PM
+            });
+
+            last_time_update = `${formattedDate}: ${formattedTime}`;
+        }
+    }
+%>
+<h1>Last update at: <%= last_time_update %></h1>
 <div class="flex justify-center">
     <div class="card bg-base-100 w-96 shadow-xl">
         <div class="card-body">
-            <h2 class="card-title"><%=data.title %></h2>
-            <p><%=data.note %></p>
+            <h2 class="card-title"><%= data.title %></h2>
+            <p><%= data.note %></p>
             <div class="card-actions justify-end">
-                <a href="/update/<%=data._id %>"><button class="btn btn-sm btn-success">Buy Now</button></a>
+                <a href="/update/<%= data._id %>">
+                    <button class="btn btn-sm btn-success">Buy Now</button>
+                </a>
             </div>
         </div>
     </div>

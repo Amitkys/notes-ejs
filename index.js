@@ -3,9 +3,49 @@ const path = require('path');
 const engine = require('ejs-mate');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-var methodOverride = require('method-override')
-const Notes = require('./db/db');
+var methodOverride = require('method-override');
+const session = require('express-session');
+const Notes = require('./models/db');
+const passport = require('./config/auth');
 const app = express();
+
+// Middleware for handling sessions
+app.use(session({
+    secret: 'OCSPX-sqwqm5GzTLjfBgEmA7OBEii7rgtP',
+    resave: false,
+    saveUninitialized: true
+  }));
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Routes for authentication
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/auth/google' }),
+  (req, res) => {
+    res.redirect('/');
+  }
+);
+
+app.get('/logout', (req, res) => {
+    req.logout(err => {
+      if (err) return next(err);
+      res.redirect('/');
+    });
+  });
+
+// Middleware to check authentication
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) return next();
+    res.render('auth/login.ejs');
+  }
+
+  app.get('/dashboard', isLoggedIn, (req, res) => {
+    res.send(`Hello ${req.user.name}, you are logged in!`);
+  });
 
 // Use ejs-mate for all ejs templates:
 app.engine('ejs', engine);
@@ -27,8 +67,8 @@ mongoose.connect('mongodb://localhost:27017/note')
 .then(() => {console.log('connected to db')}).catch((e) => console.log('error to connect db', e));
 
 // home 
-app.get("/", async(req, res) => {
-    const all_note = await Notes.find({});
+app.get("/", isLoggedIn, async(req, res) => {
+    const all_note = await Notes.find({ userId: req.user._id });
     res.render('routes/index.ejs', {all_note});
 });
 // get notes by id
@@ -57,8 +97,8 @@ app.get('/update/:id', async(req, res) => {
 // update note of specified id
 app.put('/note/:id', async(req, res) => {
     const id = req.params.id;
-    const newNote = {title: req.body.title, note: req.body.note};
-    const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
+    const newNote = {title: req.body.title, note: req.body.note, updatedAt: new Date()};
+    const updatedNote = await Notes.findByIdAndUpdate(id, newNote, { new: true });
     res.redirect('/');
 })
 
