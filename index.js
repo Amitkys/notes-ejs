@@ -37,7 +37,8 @@ app.post('/note', async(req, res) => {
     // console.log(createdNote);
     res.json({msg: 'notes created', noteId: createdNote._id});
 })
-app.put('/note/:id', async(req, res) => {
+// update
+app.put('/update/:id', async(req, res) => {
     const id = req.params.id;
     const newNote = {title: req.body.title, note: req.body.note};
     const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
