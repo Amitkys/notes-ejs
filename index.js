@@ -40,9 +40,10 @@ app.post('/note', async(req, res) => {
 // update
 app.get('/update/:id', async(req, res) => {
     const id = req.params.id;
+    const data = await Notes.findById(id);
     // const newNote = {title: req.body.title, note: req.body.note};
     // const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
-    res.render('routes/update.ejs')
+    res.render('routes/update.ejs', {data})
 })
 app.get("/note", async(req, res) => {
     const all_note = await Notes.find({});
