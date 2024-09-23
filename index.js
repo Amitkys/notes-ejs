@@ -13,14 +13,12 @@ app.set('view engine', 'ejs'); // Set EJS as the view engine
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/kys', (req, res) => {
+    res.render('routes/index.ejs');
+})
+
 mongoose.connect('mongodb://localhost:27017/note')
 .then(() => {console.log('connected to db')}).catch((e) => console.log('error to connect db', e));
-
-
-app.get("/", async(req, res) => {
-    const all_note = await Notes.find({});
-    res.render('routes/index.ejs', {all_note});
-});
 
 app.post('/note', async(req, res) => {
     const newNote = {title: req.body.title, note: req.body.note};
@@ -34,11 +32,16 @@ app.put('/note/:id', async(req, res) => {
     const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
     res.json({msg: 'Note Updated'});
 })
-
+app.get("/note", async(req, res) => {
+    const all_note = await Notes.find({});
+    res.json({all_note});
+});
 app.delete("/note/:id", async(req, res) => {
     const id = req.params.id;
     const deletedNote = await Notes.findByIdAndDelete(id);
     res.json({msg: 'notes delete'});
     
 })
+
+
 app.listen(3000, () => console.log('listening on 3000'));
