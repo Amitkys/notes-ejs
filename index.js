@@ -22,9 +22,6 @@ app.use(bodyParser.json())
 // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'))
 
-app.get('/kys', (req, res) => {
-    res.render('routes/index.ejs');
-})
 
 mongoose.connect('mongodb://localhost:27017/note')
 .then(() => {console.log('connected to db')}).catch((e) => console.log('error to connect db', e));
