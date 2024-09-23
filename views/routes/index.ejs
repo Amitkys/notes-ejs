@@ -3,8 +3,8 @@
     <table class="table text-center">
       <!-- head -->
       <thead>
-        <tr>
-          <th class="underline">Date</th>
+        <tr class="text-sm lg:text-lg font-semibold">
+          <th >Date</th>
           <th>Title</th>
           <th>Action</th>
         </tr>
@@ -12,10 +12,10 @@
       <tbody>
        <% for(data of all_note){ %>
         
-        <tr>
+        <tr >
           <% let formattedDate = data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short'  }) %>
           <td><%=formattedDate %></td>
-          <td><%=data.title %></td>
+          <td class="text-sm lg:text-lg font-semibold"><%=data.title %></td>
           <td><a href="/note/<%=data._id %>"><button class="btn btn-sm btn-success">click me</button></a></td>
         </tr>
         <% } %>

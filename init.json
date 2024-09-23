@@ -1,42 +1,173 @@
 [
     {
-        "title": "Meeting Notes",
-        "note": "Discussed the new project timeline and budget allocation."
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f1e"),
+        "title": "Second Notes",
+        "note": "This is my second note. Over the past few weeks, I've been reflecting deeply on the concept of gratitude. I realized that it's easy to get caught up in daily stresses and forget to appreciate the small things. I've started a gratitude journal where I write down at least three things I’m thankful for each day. This simple practice has shifted my perspective and brought a newfound sense of joy into my life. Whether it's the warmth of the sun on my face, a kind gesture from a stranger, or simply a good cup of coffee, recognizing these moments makes a huge difference. I encourage everyone to try this practice, as it can lead to a more positive mindset and a greater appreciation for life’s little pleasures. I plan to continue this journey and see how it influences my overall happiness.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-08-15T10:30:00.000Z"),
+        "updatedAt": ISODate("2024-08-15T10:30:00.000Z"),
+        "__v": 0
     },
     {
-        "title": "Grocery List",
-        "note": "Buy milk, bread, eggs, and coffee."
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f1f"),
+        "title": "Third Notes",
+        "note": "This is my third note. I've recently taken up gardening, and it has transformed my understanding of patience and nurturing. Watching seeds grow into plants requires time, effort, and consistent care. I’ve started with a small herb garden in my kitchen window. It’s fascinating to see how something so tiny can grow into something useful and beautiful. Each morning, I check on my plants, water them, and make sure they get enough sunlight. This daily ritual has become a source of peace for me. I’ve also learned a lot about the importance of soil quality, watering schedules, and pest management. Gardening is more than just a hobby; it’s a way to connect with nature and understand the cycles of life. I hope to expand my garden to include vegetables soon, which would not only be rewarding but also provide fresh produce for my meals.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-07-20T14:15:00.000Z"),
+        "updatedAt": ISODate("2024-07-20T14:15:00.000Z"),
+        "__v": 0
     },
     {
-        "title": "Todo for Monday",
-        "note": "Finish the report and prepare for the client meeting."
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f20"),
+        "title": "Fourth Notes",
+        "note": "This is my fourth note. I recently attended a workshop on mindfulness and meditation, which opened my eyes to the incredible benefits these practices can offer. The facilitator guided us through various exercises that emphasized being present in the moment. I often find myself distracted by my to-do list or future worries, but this workshop taught me the value of grounding myself. I learned simple techniques to incorporate mindfulness into my daily routine, such as mindful breathing and body scans. After practicing these techniques for just a week, I've noticed a significant reduction in my anxiety levels. I feel more centered and aware of my thoughts and feelings. This experience has motivated me to explore meditation further and commit to a regular practice. I'm excited to see how this journey unfolds and how it impacts my overall well-being.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-09-05T09:00:00.000Z"),
+        "updatedAt": ISODate("2024-09-05T09:00:00.000Z"),
+        "__v": 0
     },
     {
-        "title": "Book Ideas",
-        "note": "A mystery novel set in an ancient library with hidden rooms."
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f21"),
+        "title": "Fifth Notes",
+        "note": "This is my fifth note. In the last month, I’ve been trying to improve my cooking skills. I decided to challenge myself to cook at least one new recipe every week. This has been both fun and rewarding, as I’ve explored various cuisines and cooking techniques. From homemade pasta to Thai curry, each dish has taught me something new. I particularly enjoyed making homemade bread, which was a therapeutic process that filled my kitchen with warmth and delightful aromas. Cooking has become a creative outlet for me, allowing me to express myself and share my love for food with friends and family. I've also realized how cooking from scratch is healthier and more satisfying than relying on takeout. I look forward to trying new recipes and possibly hosting dinner parties to share these experiences with others.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-08-10T19:45:00.000Z"),
+        "updatedAt": ISODate("2024-08-10T19:45:00.000Z"),
+        "__v": 0
     },
     {
-        "title": "Workout Routine",
-        "note": "Start with cardio, then focus on strength training and stretching."
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f22"),
+        "title": "Sixth Notes",
+        "note": "This is my sixth note. I’ve been making a conscious effort to disconnect from technology more often. The constant notifications and digital noise can be overwhelming, so I set aside a day each week for a ‘digital detox.’ During this time, I engage in activities that promote mindfulness and creativity, such as reading, painting, or going for a long walk in nature. This break has provided me with clarity and helped me reconnect with my thoughts and feelings. I've found that I’m more present and engaged in my interactions with family and friends when I'm not glued to my phone. This practice has also improved my sleep, as I now spend less time scrolling before bed. I'm eager to continue this habit and see how it enhances my overall quality of life.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-09-12T15:30:00.000Z"),
+        "updatedAt": ISODate("2024-09-12T15:30:00.000Z"),
+        "__v": 0
     },
     {
-        "title": "Recipe Notes",
-        "note": "Add a pinch of salt and let the sauce simmer for 20 minutes."
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f23"),
+        "title": "Seventh Notes",
+        "note": "This is my seventh note. Recently, I attended a book club meeting that sparked a lively discussion about personal development literature. We read a book that focused on the power of habits and how small changes can lead to significant transformations. It was fascinating to hear different perspectives from fellow members, each sharing their experiences related to the book’s themes. I found myself inspired to evaluate my own habits and identify areas where I can improve. I’ve started implementing a morning routine that includes meditation, journaling, and exercise, which sets a positive tone for my day. This group has encouraged me to explore more self-help books and continue my journey of self-discovery and improvement. I’m excited about the potential changes this could bring to my life.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-08-25T18:00:00.000Z"),
+        "updatedAt": ISODate("2024-08-25T18:00:00.000Z"),
+        "__v": 0
     },
     {
-        "title": "Travel Plans",
-        "note": "Visit Paris, Rome, and Amsterdam next summer."
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f24"),
+        "title": "Eighth Notes",
+        "note": "This is my eighth note. I've recently become more aware of the impact of my environmental footprint and have made it a goal to live more sustainably. I've started implementing small changes in my daily life, such as reducing plastic use, recycling diligently, and opting for public transport whenever possible. I’ve also begun to educate myself on the importance of reducing food waste and have made it a point to plan my meals better to avoid leftovers that end up in the trash. I believe that even small actions can contribute to a larger positive impact on the planet. Additionally, I’ve joined a local community group focused on environmental activism, which has allowed me to connect with like-minded individuals and engage in meaningful projects. Together, we aim to raise awareness and inspire others to take action for a sustainable future.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-09-01T13:15:00.000Z"),
+        "updatedAt": ISODate("2024-09-01T13:15:00.000Z"),
+        "__v": 0
     },
     {
-        "title": "App Feature Ideas",
-        "note": "Include a dark mode, customizable dashboard, and notification alerts."
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f25"),
+        "title": "Ninth Notes",
+        "note": "This is my ninth note. I've been exploring the idea of minimalism and how it can simplify my life. After watching documentaries and reading articles, I've been inspired to declutter my living space. I started with my closet, which was overflowing with clothes I hadn’t worn in ages. Donating items that no longer serve me has been liberating. I’ve realized how much stress and distraction comes from having too many possessions. Now, I’m gradually working through other areas of my home, focusing on keeping only what truly brings me joy. This process has taught me to be more intentional about my purchases and has made me appreciate the things I do own much more. I hope to continue this journey and embrace a more minimalist lifestyle.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-08-30T20:45:00.000Z"),
+        "updatedAt": ISODate("2024-08-30T20:45:00.000Z"),
+        "__v": 0
     },
     {
-        "title": "Learning Goals",
-        "note": "Master JavaScript ES6 features and learn React hooks."
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f26"),
+        "title": "Tenth Notes",
+        "note": "This is my tenth note. I recently attended a seminar on mental health awareness, which was eye-opening. The speakers shared valuable insights into the importance of mental well-being and how it affects our daily lives. I learned about common mental health challenges and the importance of seeking help when needed. This seminar inspired me to be more open about my own mental health journey and to encourage those around me to do the same. I've started having more candid conversations with friends about our struggles and coping strategies. This shift towards openness has not only strengthened our friendships but has also created a supportive community where we can share resources and uplift one another. I believe that by fostering these discussions, we can break the stigma surrounding mental health and promote a culture of understanding and compassion.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-09-03T16:30:00.000Z"),
+        "updatedAt": ISODate("2024-09-03T16:30:00.000Z"),
+        "__v": 0
     },
     {
-        "title": "Project Roadmap",
-        "note": "Phase 1: Research and planning. Phase 2: Development and testing."
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f27"),
+        "title": "Eleventh Notes",
+        "note": "This is my eleventh note. I’ve been dedicating time to volunteer work, which has been incredibly fulfilling. I started helping out at a local food bank, where I assist with sorting donations and distributing food to those in need. This experience has opened my eyes to the challenges many face in our community. Each interaction with the individuals I serve has reinforced my belief in the importance of compassion and empathy. Volunteering has not only allowed me to give back but has also connected me with a wonderful group of like-minded individuals who share the same passion for service. Together, we’ve organized food drives and outreach events, aiming to raise awareness about food insecurity. This journey has enriched my life and strengthened my commitment to social justice. I hope to inspire others to get involved and make a difference in their communities.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-08-28T11:00:00.000Z"),
+        "updatedAt": ISODate("2024-08-28T11:00:00.000Z"),
+        "__v": 0
+    },
+    {
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f28"),
+        "title": "Twelfth Notes",
+        "note": "This is my twelfth note. As I navigate my career, I’ve been focusing on professional networking and building relationships within my industry. Recently, I attended a conference where I met many inspiring individuals and learned about the latest trends in my field. These connections have opened doors for potential collaborations and mentorship opportunities. I’ve realized that networking isn’t just about exchanging business cards; it’s about fostering genuine relationships. I make it a point to follow up with new contacts, whether through LinkedIn or coffee meetings, to keep the conversation going. Engaging in discussions about shared interests has made this process enjoyable rather than intimidating. I’m excited about the possibilities these new connections can bring and look forward to cultivating these relationships further as I advance in my career.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-09-07T09:15:00.000Z"),
+        "updatedAt": ISODate("2024-09-07T09:15:00.000Z"),
+        "__v": 0
+    },
+    {
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f29"),
+        "title": "Thirteenth Notes",
+        "note": "This is my thirteenth note. I’ve been exploring my creative side by taking up photography. I purchased a camera and have started documenting everyday moments that often go unnoticed. Capturing the beauty in mundane things has been rewarding. I often find myself looking for interesting angles and lighting that bring ordinary scenes to life. This hobby has encouraged me to slow down and truly appreciate my surroundings. I’ve also joined a local photography group, where we share our work and provide constructive feedback to one another. It’s inspiring to see how different perspectives can interpret the same subject. I aim to improve my skills and maybe even showcase my work in a local exhibition someday. This journey has not only sparked joy in my life but has also fostered connections with fellow photography enthusiasts.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-09-09T14:00:00.000Z"),
+        "updatedAt": ISODate("2024-09-09T14:00:00.000Z"),
+        "__v": 0
+    },
+    {
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f2a"),
+        "title": "Fourteenth Notes",
+        "note": "This is my fourteenth note. Recently, I’ve taken an interest in learning a new language. I believe that understanding another culture through its language can enhance my travel experiences and broaden my worldview. I’ve enrolled in a beginner’s class for Spanish and am excited about the journey ahead. The lessons have been challenging but fun, and I enjoy practicing with native speakers online. I’ve also downloaded language apps that help reinforce what I’ve learned through games and exercises. I’m determined to make progress, not just for travel but also to connect with more people. I believe language learning opens up new avenues for communication and understanding. I look forward to using my new skills in real-life situations and deepening my appreciation for the rich culture that comes with the language.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-08-12T17:30:00.000Z"),
+        "updatedAt": ISODate("2024-08-12T17:30:00.000Z"),
+        "__v": 0
+    },
+    {
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f2b"),
+        "title": "Fifteenth Notes",
+        "note": "This is my fifteenth note. As I continue my journey towards self-improvement, I’ve recently focused on financial literacy. Understanding how to manage my finances effectively is crucial for achieving my long-term goals. I’ve started reading books and attending workshops about budgeting, investing, and saving. Learning about different investment strategies has particularly fascinated me, and I’m eager to apply these concepts in my own life. I’ve begun tracking my expenses and setting up a budget, which has helped me identify areas where I can save more. Additionally, I’m exploring ways to create passive income streams. This knowledge empowers me to make informed decisions and helps me feel more secure about my financial future. I’m committed to becoming financially savvy and sharing this knowledge with others.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-08-18T12:00:00.000Z"),
+        "updatedAt": ISODate("2024-08-18T12:00:00.000Z"),
+        "__v": 0
+    },
+    {
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f2c"),
+        "title": "Sixteenth Notes",
+        "note": "This is my sixteenth note. Lately, I have been drawn to the concept of holistic wellness. I’ve started incorporating practices that promote physical, emotional, and spiritual well-being into my daily routine. This includes a balanced diet, regular exercise, and mindfulness practices such as yoga and meditation. I’ve found that these activities not only improve my physical health but also enhance my mental clarity and emotional resilience. I feel more grounded and in tune with my body. I also explore various holistic approaches, such as aromatherapy and herbal remedies, to support my wellness journey. I believe that true health encompasses all aspects of life, and I am dedicated to nurturing each one. This journey has taught me the importance of self-care and the value of listening to my body’s needs.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-09-11T08:45:00.000Z"),
+        "updatedAt": ISODate("2024-09-11T08:45:00.000Z"),
+        "__v": 0
+    },
+    {
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f2d"),
+        "title": "Seventeenth Notes",
+        "note": "This is my seventeenth note. In recent weeks, I've become passionate about ethical fashion. I’ve been learning about the environmental and social impact of the clothing industry, and it has motivated me to rethink my purchasing habits. I’m making a conscious effort to support sustainable brands and thrift stores. This journey has encouraged me to embrace my creativity by upcycling old clothes and experimenting with different styles. I’ve also started organizing clothing swaps with friends to promote a more sustainable approach to fashion. This has been a fun way to refresh my wardrobe without contributing to fast fashion's negative impact. I’m excited about my evolving style and the positive changes I’m making in my consumer habits. I believe that every small step counts in the pursuit of a more sustainable future.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-08-27T14:30:00.000Z"),
+        "updatedAt": ISODate("2024-08-27T14:30:00.000Z"),
+        "__v": 0
+    },
+    {
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f2e"),
+        "title": "Eighteenth Notes",
+        "note": "This is my eighteenth note. I’ve been exploring the world of DIY projects, which has been an exciting way to unleash my creativity. I recently tackled a project to renovate my living space, starting with making my own decorative shelves. The process of planning, designing, and executing these projects has been both challenging and rewarding. I love the sense of accomplishment that comes from creating something with my own hands. I’ve also found inspiration online through various tutorials and communities that share similar interests. DIY projects have allowed me to personalize my home while also being budget-friendly. I’m excited to continue this journey and experiment with more complex projects in the future. This experience has taught me valuable skills and fostered a sense of pride in my space.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-09-08T11:20:00.000Z"),
+        "updatedAt": ISODate("2024-09-08T11:20:00.000Z"),
+        "__v": 0
+    },
+    {
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f2f"),
+        "title": "Nineteenth Notes",
+        "note": "This is my nineteenth note. Recently, I decided to take a deeper dive into the world of finance and investments. I’ve been attending webinars and reading books on stock market strategies and personal finance management. Understanding how to invest wisely is crucial for building wealth over time. I’ve started a mock portfolio to practice my skills without financial risk, which has been a great learning experience. I’ve realized that investing is not just for the wealthy but is accessible to anyone willing to learn. This journey has empowered me to take control of my financial future, and I’m excited to share what I learn with my friends and family. I believe that financial literacy is essential for everyone, and I hope to inspire others to explore this important topic.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-08-22T13:50:00.000Z"),
+        "updatedAt": ISODate("2024-08-22T13:50:00.000Z"),
+        "__v": 0
+    },
+    {
+        "_id": ObjectId("66f1d6df3abdb2a7c3190f30"),
+        "title": "Twentieth Notes",
+        "note": "This is my twentieth note. I recently joined a cooking class focused on international cuisines. Each week, we explore different cultures through their food, learning techniques and recipes from around the world. This experience has broadened my culinary skills and deepened my appreciation for global flavors. I've enjoyed making dishes like Moroccan tagine and Japanese sushi, which not only taste great but also tell stories of their cultures. Cooking in a group has also fostered friendships, as we bond over our shared love for food. I’m excited to bring these new skills into my own kitchen and share the meals with friends and family. This journey has inspired me to be more adventurous in my cooking and to continue exploring the connections between food and culture.",
+        "userId": ObjectId("66f1d2833abdb2a7c3190efc"),
+        "date": ISODate("2024-09-14T15:00:00.000Z"),
+        "updatedAt": ISODate("2024-09-14T15:00:00.000Z"),
+        "__v": 0
     }
 ]
