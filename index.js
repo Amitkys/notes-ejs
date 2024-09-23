@@ -26,49 +26,43 @@ app.use(methodOverride('_method'))
 mongoose.connect('mongodb://localhost:27017/note')
 .then(() => {console.log('connected to db')}).catch((e) => console.log('error to connect db', e));
 
+// home 
 app.get("/", async(req, res) => {
     const all_note = await Notes.find({});
     res.render('routes/index.ejs', {all_note});
 });
-
+// get notes by id
 app.get('/note/:id', async(req, res) => {
     const id = req.params.id;
     const data = await Notes.findById(id);
     res.render('routes/singleData.ejs', {data})
 })
-
+// open form for create note
 app.get('/create', (req, res) => {
     res.render('routes/create.ejs');
 })
-
+// add new data
 app.post('/note', async(req, res) => {
     const newNote = {title: req.body.title, note: req.body.note};
     const createdNote = await Notes.create(newNote);
-
+    // after add, go to home
    res.redirect('/');
 })
-// update form with data
+// open form with current data
 app.get('/update/:id', async(req, res) => {
     const id = req.params.id;
     const data = await Notes.findById(id);
-    // const newNote = {title: req.body.title, note: req.body.note};
-    // const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
     res.render('routes/update.ejs', {data})
-})
+});
+// update note of specified id
 app.put('/note/:id', async(req, res) => {
     const id = req.params.id;
-    // const data = await Notes.findById(id);
     const newNote = {title: req.body.title, note: req.body.note};
-    // console.log(id, newNote);
     const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
     res.redirect('/');
 })
-// updating form with new data
 
-app.get("/note", async(req, res) => {
-    const all_note = await Notes.find({});
-    res.json({all_note});
-});
+// delete notes
 app.delete("/note/:id", async(req, res) => {
     const id = req.params.id;
     const deletedNote = await Notes.findByIdAndDelete(id);
