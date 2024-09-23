@@ -72,7 +72,7 @@ app.get("/", isLoggedIn, async(req, res) => {
     res.render('routes/index.ejs', {all_note});
 });
 // Get notes by id - ensure the note belongs to the user
-app.get('/note/:id', async(req, res) => {
+app.get('/note/:id', isLoggedIn, async(req, res) => {
     const id = req.params.id;
     const data = await Notes.findOne({ _id: id, userId: req.user._id }); // Check ownership
     if (data) {
@@ -82,7 +82,7 @@ app.get('/note/:id', async(req, res) => {
     }
 })
 // open form for create note
-app.get('/create', (req, res) => {
+app.get('/create', isLoggedIn, (req, res) => {
     res.render('routes/create.ejs');
 })
 // add new data
