@@ -71,11 +71,15 @@ app.get("/", isLoggedIn, async(req, res) => {
     const all_note = await Notes.find({ userId: req.user._id });
     res.render('routes/index.ejs', {all_note});
 });
-// get notes by id
+// Get notes by id - ensure the note belongs to the user
 app.get('/note/:id', async(req, res) => {
     const id = req.params.id;
-    const data = await Notes.findById(id);
-    res.render('routes/singleData.ejs', {data})
+    const data = await Notes.findOne({ _id: id, userId: req.user._id }); // Check ownership
+    if (data) {
+        res.render('routes/singleData.ejs', { data });
+    } else {
+        res.status(403).send('You are not authorized to view this note.');
+    }
 })
 // open form for create note
 app.get('/create', (req, res) => {
