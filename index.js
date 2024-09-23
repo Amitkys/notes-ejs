@@ -86,33 +86,48 @@ app.get('/create', isLoggedIn, (req, res) => {
     res.render('routes/create.ejs');
 })
 // add new data
-app.post('/note', async(req, res) => {
-    const newNote = {title: req.body.title, note: req.body.note};
+app.post('/note', isLoggedIn, async(req, res) => {
+    const newNote = {
+        title: req.body.title,
+        note: req.body.note,
+        userId: req.user._id // Associate with the logged-in user
+    };
     const createdNote = await Notes.create(newNote);
     // after add, go to home
    res.redirect('/');
 })
 // open form with current data
-app.get('/update/:id', async(req, res) => {
+app.get('/update/:id', isLoggedIn, async(req, res) => {
     const id = req.params.id;
-    const data = await Notes.findById(id);
-    res.render('routes/update.ejs', {data})
+    const data = await Notes.findOne({ _id: id, userId: req.user._id }); // Check ownership
+    if (data) {
+        res.render('routes/update.ejs', { data });
+    } else {
+        res.status(403).send('You are not authorized to edit this note.');
+    }
 });
 // update note of specified id
 app.put('/note/:id', async(req, res) => {
     const id = req.params.id;
-    const newNote = {title: req.body.title, note: req.body.note, updatedAt: new Date()};
-    const updatedNote = await Notes.findByIdAndUpdate(id, newNote, { new: true });
-    res.redirect('/');
+    const newNote = { title: req.body.title, note: req.body.note, updatedAt: new Date() };
+    const updatedNote = await Notes.findOneAndUpdate({ _id: id, userId: req.user._id }, newNote, { new: true });
+    if (updatedNote) {
+        res.redirect('/');
+    } else {
+        res.status(403).send('You are not authorized to update this note.');
+    }
 })
 
-// delete notes
-app.delete("/note/:id", async(req, res) => {
+// Delete notes - ensure the note belongs to the user
+app.delete('/note/:id', isLoggedIn, async (req, res) => {
     const id = req.params.id;
-    const deletedNote = await Notes.findByIdAndDelete(id);
-    res.json({msg: 'notes delete'});
-    
-})
+    const deletedNote = await Notes.findOneAndDelete({ _id: id, userId: req.user._id }); // Check ownership
+    if (deletedNote) {
+        res.json({ msg: 'Note deleted' });
+    } else {
+        res.status(403).send('You are not authorized to delete this note.');
+    }
+});
 
 
 app.listen(3000, () => console.log('listening on 3000'));
