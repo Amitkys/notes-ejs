@@ -25,6 +25,12 @@ app.get("/", async(req, res) => {
     res.render('routes/index.ejs', {all_note});
 });
 
+app.get('/note/:id', async(req, res) => {
+    const id = req.params.id;
+    const data = await Notes.findById(id);
+    res.render('routes/singleData.ejs', {data})
+})
+
 app.post('/note', async(req, res) => {
     const newNote = {title: req.body.title, note: req.body.note};
     const createdNote = await Notes.create(newNote);

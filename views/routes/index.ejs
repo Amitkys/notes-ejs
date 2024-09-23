@@ -16,7 +16,7 @@
           <% let formattedDate = data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short'  }) %>
           <td><%=formattedDate %></td>
           <td><%=data.title %></td>
-          <td><button class="btn btn-sm bg-green-500 text-black hover:bg-green-700">click me</button></td>
+          <td><a href="/note/<%=data._id %>"><button class="btn btn-sm bg-green-500 text-black hover:bg-green-700">click me</button></a></td>
         </tr>
         <% } %>
         <tr>
