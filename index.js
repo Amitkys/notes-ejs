@@ -20,6 +20,11 @@ app.get('/kys', (req, res) => {
 mongoose.connect('mongodb://localhost:27017/note')
 .then(() => {console.log('connected to db')}).catch((e) => console.log('error to connect db', e));
 
+app.get("/", async(req, res) => {
+    const all_note = await Notes.find({});
+    res.render('routes/index.ejs', {all_note});
+});
+
 app.post('/note', async(req, res) => {
     const newNote = {title: req.body.title, note: req.body.note};
     const createdNote = await Notes.create(newNote);
