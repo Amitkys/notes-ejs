@@ -28,15 +28,17 @@
 %>
 <h1>Last update at: <%= last_time_update %></h1>
 <div class="flex justify-center">
-    <div class="card bg-base-100 w-96 shadow-xl">
+    <div class="card bg-[#020617] w-[800px]  shadow-xl rounded-lg overflow-hidden mx-2">
         <div class="card-body">
-            <h2 class="card-title"><%= data.title %></h2>
-            <p><%= data.note %></p>
-            <div class="card-actions justify-end">
+            <h2 class="card-title text-2xl font-semibold text-white mb-2"><%= data.title %></h2>
+            <hr class="border-[#94A3B8] mb-4">
+            <p class="text-[#94A3B8] text-lg leading-relaxed tracking-wide"><%= data.note %></p>
+            <div class="card-actions justify-end mt-4">
                 <a href="/update/<%= data._id %>">
-                    <button class="btn btn-sm btn-success">Buy Now</button>
+                    <button class="btn btn-sm btn-success hover:bg-green-600 transition duration-300">Buy Now</button>
                 </a>
             </div>
         </div>
     </div>
 </div>
+
