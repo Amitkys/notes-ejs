@@ -30,12 +30,17 @@ app.get('/auth/google/callback',
   }
 );
 
+
 app.get('/logout', (req, res) => {
     req.logout(err => {
       if (err) return next(err);
       res.redirect('/');
     });
   });
+
+app.get('/login', (req, res) => {
+    res.render('auth/login.ejs');
+})
 
 // Middleware to check authentication
 function isLoggedIn(req, res, next) {
