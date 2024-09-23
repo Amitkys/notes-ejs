@@ -38,11 +38,11 @@ app.post('/note', async(req, res) => {
     res.json({msg: 'notes created', noteId: createdNote._id});
 })
 // update
-app.put('/update/:id', async(req, res) => {
+app.get('/update/:id', async(req, res) => {
     const id = req.params.id;
-    const newNote = {title: req.body.title, note: req.body.note};
-    const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
-    res.json({msg: 'Note Updated'});
+    // const newNote = {title: req.body.title, note: req.body.note};
+    // const updatedNote = await Notes.findByIdAndUpdate(id, newNote);
+    res.render('routes/update.ejs')
 })
 app.get("/note", async(req, res) => {
     const all_note = await Notes.find({});
