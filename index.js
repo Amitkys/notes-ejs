@@ -33,6 +33,15 @@ app.get('/', async(req, res) => {
 })
 
 
+
+app.get('/:id', async(req, res) => {
+    const id = req.params.id; 
+    const data = await Notes.findById(id);
+    res.render('routes/singleNote.ejs', {data});
+    
+})
+
+
 // app.post('/note', async(req, res) => {
 //     const newNote = {title: req.body.title, note: req.body.note};
 //     const createdNote = await Notes.create(newNote);
