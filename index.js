@@ -44,8 +44,8 @@ app.get('/create', (req, res) => {
 app.post('/note', async(req, res) => {
     const newNote = {title: req.body.title, note: req.body.note};
     const createdNote = await Notes.create(newNote);
-    // console.log(createdNote);
-    res.json({msg: 'notes created', noteId: createdNote._id});
+
+   res.redirect('/');
 })
 // update
 app.get('/update/:id', async(req, res) => {
