@@ -85,8 +85,8 @@ mongoose.connect(process.env.DATABASE_URL)
 
 // middleware
 app.use((req, res, next) => {
-    // res.locals.success = req.flash("success");
-    // res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
+    res.locals.error = req.flash("error");
     res.locals.loggedInUser = req.user;
     next();
   })
@@ -122,6 +122,7 @@ app.post('/note', isLoggedIn, async(req, res) => {
         userId: req.user._id // Associate with the logged-in user
     };
     const createdNote = await Notes.create(newNote);
+    req.flash("success", "Notes Created!");
     // after add, go to home
    res.redirect('/');
 })
