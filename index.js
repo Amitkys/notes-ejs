@@ -1,5 +1,7 @@
 const express = require('express');
+require('dotenv').config();
 const path = require('path');
+
 const engine = require('ejs-mate');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -7,11 +9,14 @@ var methodOverride = require('method-override');
 const session = require('express-session');
 const Notes = require('./models/db');
 const passport = require('./config/auth');
+require('dotenv').config();
 const app = express();
+
+// console.log(process.env.DATABASE_URL);
 
 // Middleware for handling sessions
 app.use(session({
-    secret: 'OCSPX-sqwqm5GzTLjfBgEmA7OBEii7rgtP',
+    secret: process.env.GOOGLE_CLIENT_SECRET,
     resave: false,
     saveUninitialized: true
   }));
@@ -24,7 +29,7 @@ app.use(passport.session());
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/auth/google' }),
+  passport.authenticate('google', { failureRedirect: '/login' }),
   (req, res) => {
     res.redirect('/');
   }

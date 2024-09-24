@@ -3,6 +3,8 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('../models/User'); // Import the User model
 
+
+
 // Passport configuration
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -19,8 +21,8 @@ passport.deserializeUser(async (id, done) => {
   
 
 passport.use(new GoogleStrategy({
-  clientID: '48121057593-bbbmeb7nrm2a0si114decbnetit58e80.apps.googleusercontent.com',
-  clientSecret: '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',
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: '/auth/google/callback',
   passReqToCallback: true
 }, async (req, accessToken, refreshToken, profile, done) => {
