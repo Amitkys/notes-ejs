@@ -1,3 +1,4 @@
 1. button should be disabled till first data is inserted, (same data should not be inserted twice)
 2. title should not be longer (it must be inside home screen)
+3. designed login page (add text)
 
