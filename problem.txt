@@ -1,0 +1,1 @@
+1. button should be disabled till first data is inserted, (same data should not be inserted twice)
