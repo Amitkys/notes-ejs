@@ -73,11 +73,12 @@ app.use(bodyParser.json())
 app.use(methodOverride('_method'))
 
 
-mongoose.connect('mongodb://localhost:27017/note')
+mongoose.connect(process.env.DATABASE_URL)
 .then(() => {console.log('connected to db')}).catch((e) => console.log('error to connect db', e));
 
 // home 
 app.get("/", isLoggedIn, async(req, res) => {
+    // console.log(req.user);
     const all_note = await Notes.find({ userId: req.user._id });
     res.render('routes/index.ejs', {all_note});
 });
