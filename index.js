@@ -9,7 +9,8 @@ var methodOverride = require('method-override');
 const session = require('express-session');
 const Notes = require('./models/db');
 const passport = require('./config/auth');
-require('dotenv').config();
+// require('dotenv').config();
+const flash = require('connect-flash');
 const app = express();
 
 // console.log(process.env.DATABASE_URL);
@@ -26,9 +27,10 @@ app.use(session({
       }
   }));
 
-// Passport middleware
+// Passport middleware and session
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 // Routes for authentication
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
@@ -81,6 +83,14 @@ app.use(methodOverride('_method'))
 mongoose.connect(process.env.DATABASE_URL)
 .then(() => {console.log('connected to db')}).catch((e) => console.log('error to connect db', e));
 
+// middleware
+app.use((req, res, next) => {
+    // res.locals.success = req.flash("success");
+    // res.locals.error = req.flash("error");
+    res.locals.loggedInUser = req.user;
+    next();
+  })
+
 // home 
 app.get("/", isLoggedIn, async(req, res) => {
     req.session.name = "amit";
@@ -89,7 +99,7 @@ app.get("/", isLoggedIn, async(req, res) => {
     res.render('routes/index.ejs', {all_note});
 });
 app.get('/test', (req, res) => {
-    res.send(req.session.name)
+    
 })
 // Get notes by id - ensure the note belongs to the user
 app.get('/note/:id', isLoggedIn, async(req, res) => {
