@@ -93,8 +93,6 @@ app.use((req, res, next) => {
 
 // home 
 app.get("/", isLoggedIn, async(req, res) => {
-    req.session.name = "amit";
-    console.log(req.session.name);
     const all_note = await Notes.find({ userId: req.user._id });
     res.render('routes/index.ejs', {all_note});
 });
