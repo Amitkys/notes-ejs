@@ -2177,6 +2177,14 @@ html {
   height: 2.75rem;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-9 {
+  height: 2.25rem;
+}
+
 .w-5 {
   width: 1.25rem;
 }
@@ -2243,6 +2251,10 @@ html {
 
 .w-11 {
   width: 2.75rem;
+}
+
+.w-9 {
+  width: 2.25rem;
 }
 
 .max-w-xs {
@@ -2361,6 +2373,16 @@ html {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-neutral {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity)));
+}
+
 .stroke-current {
   stroke: currentColor;
 }
@@ -2475,6 +2497,29 @@ html {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+@media (min-width: 1024px) {
+  .lg\:btn-sm {
+    height: 2rem;
+    min-height: 2rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-square:where(.lg\:btn-sm) {
+    height: 2rem;
+    width: 2rem;
+    padding: 0px;
+  }
+
+  .btn-circle:where(.lg\:btn-sm) {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 9999px;
+    padding: 0px;
+  }
 }
 
 .hover\:border-slate-400:hover {

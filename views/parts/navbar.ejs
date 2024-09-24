@@ -53,14 +53,14 @@
   </div> -->
 
 
-  <div class="navbar bg-base-100">
+  <div class="navbar bg-neutral">
     <!-- start  -->
     <div class="flex-1 navbar-start">
-      <a href="/" class="ml-2 lg:ml-16"><img class="h-11 w-11" src="/image/logo.svg" alt=""></a>
+      <a href="/" class="ml-2 lg:ml-16"><img class="h-9 w-9" src="/image/logo.svg" alt=""></a>
     </div>
     <!-- center  -->
     <div class="navbar-center">
-      <a class="btn btn-info" href="/create">add notes</a>
+      <a class="btn btn-info btn-xs lg:btn-sm" href="/create">New Notes</a>
     </div>
     <div class="flex-none gap-2 navbar-end">
       
@@ -74,7 +74,7 @@
         </div>
         <ul
           tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+          class="menu menu-sm dropdown-content bg-neutral rounded-box z-[1] mt-3 w-52 p-2 shadow-xl">
           <li><a><%=loggedInUser.name %></a></li>
           <hr>
           <li><a href="/logout">Logout</a></li>
