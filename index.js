@@ -18,7 +18,12 @@ const app = express();
 app.use(session({
     secret: process.env.GOOGLE_CLIENT_SECRET,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie:{
+        expires: Date.now() + 3 * 24 * 60 * 60 * 1000,
+        maxAge: 3 * 24 * 60 * 60 * 1000,
+        httpOnly: true
+      }
   }));
 
 // Passport middleware
