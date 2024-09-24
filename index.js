@@ -78,10 +78,14 @@ mongoose.connect(process.env.DATABASE_URL)
 
 // home 
 app.get("/", isLoggedIn, async(req, res) => {
-    // console.log(req.user);
+    req.session.name = "amit";
+    console.log(req.session.name);
     const all_note = await Notes.find({ userId: req.user._id });
     res.render('routes/index.ejs', {all_note});
 });
+app.get('/test', (req, res) => {
+    res.send(req.session.name)
+})
 // Get notes by id - ensure the note belongs to the user
 app.get('/note/:id', isLoggedIn, async(req, res) => {
     const id = req.params.id;
