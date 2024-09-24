@@ -86,6 +86,7 @@ app.get("/", isLoggedIn, async(req, res) => {
 app.get('/note/:id', isLoggedIn, async(req, res) => {
     const id = req.params.id;
     const data = await Notes.findOne({ _id: id, userId: req.user._id }); // Check ownership
+    console.log(data.updatedAt)
     if (data) {
         res.render('routes/singleData.ejs', { data });
     } else {
