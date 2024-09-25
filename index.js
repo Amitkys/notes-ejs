@@ -103,7 +103,6 @@ app.get('/test', (req, res) => {
 app.get('/note/:id', isLoggedIn, async(req, res) => {
     const id = req.params.id;
     const data = await Notes.findOne({ _id: id, userId: req.user._id }); // Check ownership
-    console.log(data.updatedAt)
     if (data) {
         res.render('routes/singleData.ejs', { data });
     } else {
@@ -122,7 +121,7 @@ app.post('/note', isLoggedIn, async(req, res) => {
         userId: req.user._id // Associate with the logged-in user
     };
     const createdNote = await Notes.create(newNote);
-    req.flash("success", "Notes Created!");
+    req.flash("success", "Notes Saved.");
     // after add, go to home
    res.redirect('/');
 })
@@ -131,6 +130,7 @@ app.get('/update/:id', isLoggedIn, async(req, res) => {
     const id = req.params.id;
     const data = await Notes.findOne({ _id: id, userId: req.user._id }); // Check ownership
     if (data) {
+        
         res.render('routes/update.ejs', { data });
     } else {
         res.status(403).send('You are not authorized to edit this note.');
@@ -142,6 +142,7 @@ app.put('/note/:id', async(req, res) => {
     const newNote = { title: req.body.title, note: req.body.note, updatedAt: new Date() };
     const updatedNote = await Notes.findOneAndUpdate({ _id: id, userId: req.user._id }, newNote, { new: true });
     if (updatedNote) {
+        req.flash("success", "Notes Updated.")
         res.redirect('/');
     } else {
         res.status(403).send('You are not authorized to update this note.');
