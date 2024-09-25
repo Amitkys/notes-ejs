@@ -2,11 +2,11 @@ const Joi = require('joi');
 
 // Define the schema
 const schema = Joi.object({
-    title: Joi.string().min(5).max(10).required().messages({
+    title: Joi.string().min(3).max(25).required().messages({
         'string.empty': 'Title is required.',
         'any.required': 'Title is required.',
         'string.min': 'Title is too short',
-        'string.max': 'Title length should be 10 or less'
+        'string.max': 'Title length should be 25 or less'
     }),
     note: Joi.string().min(1).required().messages({
         'string.empty': 'Note is required.',
