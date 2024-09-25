@@ -13,7 +13,7 @@ const passport = require('./config/auth');
 const flash = require('connect-flash');
 const app = express();
 
-// console.log(process.env.DATABASE_URL);
+
 
 // Middleware for handling sessions
 app.use(session({
