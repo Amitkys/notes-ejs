@@ -2335,6 +2335,14 @@ html {
   margin-top: 0.25rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -2389,6 +2397,22 @@ html {
 
 .w-full {
   width: 100%;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
+.w-1 {
+  width: 0.25rem;
+}
+
+.w-48 {
+  width: 12rem;
 }
 
 .max-w-xs {
@@ -2612,6 +2636,18 @@ html {
   font-size: 11px;
 }
 
+.text-\[30px\] {
+  font-size: 30px;
+}
+
+.text-\[28px\] {
+  font-size: 28px;
+}
+
+.text-\[20px\] {
+  font-size: 20px;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -2806,6 +2842,10 @@ html {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-\[28px\] {
+    font-size: 28px;
   }
 }
 

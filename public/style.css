@@ -11,4 +11,6 @@ body{
   .opacity-100 {
     opacity: 1;
   }
-  
+#logoName{
+  font-family: 'Quicksand', sans-serif;
+}
