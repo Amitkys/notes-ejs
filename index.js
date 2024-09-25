@@ -118,7 +118,7 @@ app.get('/create', isLoggedIn, (req, res) => {
 // add new data
 app.post('/note', validateRequestBody, isLoggedIn, async(req, res) => {
     const formTempData = req.flash('formTempData')[0] || {};
-    console.log(formTempData);
+    
     const newNote = {
         title: req.body.title,
         note: req.body.note,
@@ -158,7 +158,8 @@ app.delete('/note/:id', isLoggedIn, async (req, res) => {
     const id = req.params.id;
     const deletedNote = await Notes.findOneAndDelete({ _id: id, userId: req.user._id }); // Check ownership
     if (deletedNote) {
-        res.json({ msg: 'Note deleted' });
+        req.flash('success', 'Notes is Deleted.');
+        res.redirect('/');
     } else {
         res.status(403).send('You are not authorized to delete this note.');
     }

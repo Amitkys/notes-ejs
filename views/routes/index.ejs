@@ -4,19 +4,24 @@
       <!-- head -->
       <thead>
         <tr class="text-sm lg:text-lg font-semibold">
-          <th >Date</th>
+          <th>Date</th>
           <th>Title</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-       <% for(data of all_note){ %>
+       <% for(let i = all_note.length -1; i >= 0; i--){ %> <!-- Loop through all notes -->
         
         <tr >
-          <% let formattedDate = data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short'  }) %>
+          <% let formattedDate = all_note[i].date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short'  }) %>
           <td><%=formattedDate %></td>
-          <td class="text-sm lg:text-lg font-semibold"><%=data.title %></td>
-          <td><a href="/note/<%=data._id %>"><button class="btn btn-xs btn-success">view..</button></a></td>
+          <td class="text-sm lg:text-lg font-semibold relative">
+            <%=all_note[i].title %>
+            <% if(i === all_note.length -1) { %> <!-- Show "recent" for the most recent item -->
+            <span class="absolute top-0 left-0 lg:left-12 opacity-80 text-[11px] text-info">Recent..</span>
+            <% } %>
+          </td>
+          <td><a href="/note/<%=all_note[i]._id %>"><button class="btn btn-xs btn-success">view..</button></a></td>
         </tr>
         <% } %>
         

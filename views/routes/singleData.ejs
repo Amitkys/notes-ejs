@@ -35,8 +35,32 @@
             <hr class="border-[#94A3B8] mb-4">
             <p class="text-[#94A3B8] text-[19px] lg:text-xl leading-relaxed tracking-wide"><%= data.note %></p>
             <div class="card-actions justify-end mt-4">
-                <a href="/update/<%= data._id %>">
-                    <button class="btn btn-sm btn-success hover:bg-green-600 transition duration-300 px-5">Edit..</button>
+                
+                        <!-- Open the modal using ID.showModal() method -->
+                        <button class="btn btn-sm btn-link text-red-500" onclick="my_modal_5.showModal()">Delete</button>
+                        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box">
+                            <h3 class="text-lg font-bold">Are you sure want to Delete?</h3>
+                            <p class="py-4">You can't undo this operation..</p>
+                            <!-- <p>hi</p> -->
+                            <div class="modal-action">
+                                   <!-- this form for cancelation  -->
+                            <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <a href=""><button class="btn btn-sm btn-info">Cancle</button></a>
+                                </form>
+                                <!-- this form for deletion  -->
+                                <form action="/note/<%=data._id%>?_method=DELETE" method="post">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="btn btn-sm btn-error">Delete</button>
+                                </form>
+                             
+                            </div>
+                        </div>
+                        </dialog>
+
+                    <a href="/update/<%=data._id %>"><button class="btn btn-sm btn-success hover:bg-green-600 transition duration-300 px-5">Edit..</button></a>
+                    
                 </a>
             </div>
         </div>
