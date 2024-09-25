@@ -27,9 +27,9 @@
         }
     }
 %>
-<h1>Last update at: <%= last_time_update %></h1>
-<div class="flex justify-center">
-    <div class="card bg-[#020617] w-[800px]  shadow-xl rounded-lg overflow-hidden mx-2">
+<h1 class="font-semibold text-sm lg:text-lg mt-4 ml-4">Last update: <span class="bg-[#0C0A09] mx-2 py-1 p-3 rounded-3xl"><%= last_time_update %></span></h1>
+<div class="flex justify-center mt-4">
+    <div class="card bg-[#020617] w-[1200px]  shadow-xl rounded-lg overflow-hidden mx-2">
         <div class="card-body">
             <h2 class="card-title text-2xl font-semibold text-white mb-2"><%= data.title %></h2>
             <hr class="border-[#94A3B8] mb-4">

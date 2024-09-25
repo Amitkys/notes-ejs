@@ -1,5 +1,5 @@
 <% layout('./boilerplate') -%>
-<div class="flex justify-center  mt-5">
+<div class="flex justify-center  mt-5 mb-10">
     <form action="/note" method="post" class="bg-[#18181B] p-3 rounded-2xl shadow-md">
         <label class="text-[18px]" for="title">Title</label> <br>
         <input
@@ -11,7 +11,7 @@
         <label class="text-[18px]" for="note">Notes</label> <br>
         <div class="flex flex-col">
             <textarea
-                class="mt-3 textarea textarea-info w-[340px] lg:w-[900px] overflow-hidden resize-none text-[19px] lg:text-xl leading-relaxed tracking-wide"
+                class="mt-3 textarea textarea-info w-[340px] lg:w-[1200px] overflow-hidden resize-none text-[19px] lg:text-xl leading-relaxed tracking-wide"
                 placeholder="write here..."
                 name="note"
                 oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';"></textarea>

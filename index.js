@@ -4,6 +4,7 @@ const path = require('path');
 
 const engine = require('ejs-mate');
 const bodyParser = require('body-parser');
+const validateRequestBody = require('./joy');
 const mongoose = require('mongoose');
 var methodOverride = require('method-override');
 const session = require('express-session');
@@ -86,7 +87,7 @@ mongoose.connect(process.env.DATABASE_URL)
 // middleware
 app.use((req, res, next) => {
     res.locals.success = req.flash("success");
-    res.locals.error = req.flash("error");
+    res.locals.warning = req.flash("warning");
     res.locals.loggedInUser = req.user;
     next();
   })
@@ -114,7 +115,8 @@ app.get('/create', isLoggedIn, (req, res) => {
     res.render('routes/create.ejs');
 })
 // add new data
-app.post('/note', isLoggedIn, async(req, res) => {
+app.post('/note', validateRequestBody, isLoggedIn, async(req, res) => {
+    console.log(req.body);
     const newNote = {
         title: req.body.title,
         note: req.body.note,
