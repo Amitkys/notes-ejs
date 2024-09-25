@@ -1,18 +1,35 @@
 <% if(success && success.length){ %>
-    <div class="flex justify-center">
-        <div role="alert" class="alert alert-success w-[380px] text-center flex items-center justify-center space-x-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 stroke-current"
-            fill="none"
-            viewBox="0 0 24 24">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span><%=success %></span>
-        </div>
+  <div class="flex justify-center">
+    <div id="alert" role="alert" class="h-7 alert alert-success w-[380px] text-center flex items-center justify-between space-x-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 stroke-current"
+        fill="none"
+        viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span><%= success %></span>
+      <!-- Cross button -->
+      <button id="closeAlert" class="text-[#292524] hover:text-[#1C1917] font-bold focus:outline-none px-5">
+        &times;
+      </button>
     </div>
+  </div>
+  
+  <script>
+    // Close alert on button click
+    document.getElementById('closeAlert').addEventListener('click', function() {
+      document.getElementById('alert').style.display = 'none';
+    });
+  
+    // Auto remove alert after 1 second
+    setTimeout(function() {
+      document.getElementById('alert').style.display = 'none';
+    }, 4000);
+  </script>
+  
 <% } %>
