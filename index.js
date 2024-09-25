@@ -89,6 +89,7 @@ app.use((req, res, next) => {
     res.locals.success = req.flash("success");
     res.locals.warning = req.flash("warning");
     res.locals.loggedInUser = req.user;
+    res.locals.formTempData = req.flash('formTempData')[0] || {}; // Retrieve form data or use empty object
     next();
   })
 
@@ -116,7 +117,8 @@ app.get('/create', isLoggedIn, (req, res) => {
 })
 // add new data
 app.post('/note', validateRequestBody, isLoggedIn, async(req, res) => {
-    console.log(req.body);
+    const formTempData = req.flash('formTempData')[0] || {};
+    console.log(formTempData);
     const newNote = {
         title: req.body.title,
         note: req.body.note,
@@ -139,7 +141,7 @@ app.get('/update/:id', isLoggedIn, async(req, res) => {
     }
 });
 // update note of specified id
-app.put('/note/:id', async(req, res) => {
+app.put('/note/:id', validateRequestBody, async(req, res) => {
     const id = req.params.id;
     const newNote = { title: req.body.title, note: req.body.note, updatedAt: new Date() };
     const updatedNote = await Notes.findOneAndUpdate({ _id: id, userId: req.user._id }, newNote, { new: true });

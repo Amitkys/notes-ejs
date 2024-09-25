@@ -6,7 +6,7 @@
             type="text"
             name="title"
             placeholder="Type here"
-            value="<%=data.title %>"
+            value="<%=formTempData.title || data.title %>"
             class="mt-3 input input-bordered input-info w-full max-w-xs text-[19px] lg:text-xl leading-relaxed tracking-wide" /> <br><br>
     
         <label class="text-[18px]" for="note">Notes</label> <br>
@@ -17,7 +17,7 @@
                 name="note"
                 class="bg-[#020617] mt-3 textarea textarea-info w-[340px] lg:w-[1200px] overflow-hidden resize-none text-[19px] lg:text-xl leading-relaxed tracking-wide"
                 placeholder="write here"
-                oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';"><%=data.note %></textarea>
+                oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';"><%=formTempData.note || data.note %></textarea>
             <button class="btn btn-sm btn-success mt-6 self-end">Update Notes</button>
         </div>
     </form>

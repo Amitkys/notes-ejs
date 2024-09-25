@@ -25,6 +25,7 @@ const validateRequestBody = (req, res, next) => {
     // If validation fails, store the error message in flash and redirect back
     if (error) {
         req.flash('warning', error.details[0].message); // Store error message in flash
+        req.flash('formTempData', req.body); // Store submitted form data
 
         // Get the referrer or fallback to a default route
         const redirectUrl = req.get('Referer') || '/';
