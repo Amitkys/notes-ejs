@@ -70,7 +70,7 @@ app.get('/login', (req, res) => {
 // Middleware to check authentication
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
-    res.json({message: "Authentication failed!"});
+    res.redirect('/login');
   }
 
   app.get('/dashboard', isLoggedIn, (req, res) => {
