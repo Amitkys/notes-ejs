@@ -16,7 +16,7 @@
           <% let formattedDate = all_note[i].date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short'  }) %>
           <td class="relative"><%=formattedDate %>
             <% if(i === all_note.length -1) { %> <!-- Show "recent" for the most recent item -->
-            <span class="absolute top-0 left-3 lg:left-12 opacity-80 text-[11px] font-bold text-info">Recent..</span>
+            <span class="absolute top-0 left-3 lg:left-36 opacity-80 text-[11px] font-bold text-info">Recent..</span>
             <% } %>
           </td>
           <td class="text-sm lg:text-lg font-semibold ">

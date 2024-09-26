@@ -2779,6 +2779,14 @@ html {
     left: 3rem;
   }
 
+  .lg\:left-24 {
+    left: 6rem;
+  }
+
+  .lg\:left-36 {
+    left: 9rem;
+  }
+
   .lg\:ml-16 {
     margin-left: 4rem;
   }
