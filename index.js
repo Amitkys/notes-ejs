@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const validateRequestBody = require('./joy');
 const mongoose = require('mongoose');
 var methodOverride = require('method-override');
+const rateLimit = require('express-rate-limit');
 const session = require('express-session');
 const Notes = require('./models/db');
 const passport = require('./config/auth');
@@ -15,6 +16,17 @@ const flash = require('connect-flash');
 const app = express();
 
 
+
+// Define rate limit
+const limiter = rateLimit({
+    windowMs: 1000, // 1 second
+    max: 5, // limit each IP to 5 requests per windowMs
+    message: 'Too many requests, please wait and try again.',
+  });
+  
+
+  // Apply the rate limit to all requests
+app.use(limiter);
 
 // Middleware for handling sessions
 app.use(session({
@@ -58,7 +70,7 @@ app.get('/login', (req, res) => {
 // Middleware to check authentication
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
-    res.render('auth/login.ejs');
+    res.json({message: "Authentication failed!"});
   }
 
   app.get('/dashboard', isLoggedIn, (req, res) => {

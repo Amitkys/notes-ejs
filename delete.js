@@ -1,3 +1,4 @@
+/*
 // const date = new Date('2024-09-24T09:33:40.964Z');
 // console.log(date.toLocaleTimeString('en-US', {
 //                hour: 'numeric',    
@@ -37,3 +38,40 @@ if (error) {
 } else {
     console.log('Validation successful:', value);
 }
+    */
+/* testing rate limit
+
+const express = require('express');
+const rateLimit = require('express-rate-limit');
+
+const app = express();
+
+// Define global rate limit
+const limiter = rateLimit({
+  windowMs: 1000, // 1 second
+  max: 5, // limit each IP to 5 requests per windowMs
+  message: 'Too many requests, please wait and try again.',
+});
+
+// Exclude a specific route before applying the global limiter
+app.get('/excluded-route', (req, res) => {
+  res.send('This route is not rate-limited');
+});
+
+// Apply rate limiter to all other routes
+app.use(limiter);
+
+// Example of other routes
+app.get('/', (req, res) => {
+  res.send('Home Page with rate limiting');
+});
+
+app.get('/api', (req, res) => {
+  res.send('API route with rate limiting');
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+
+*/

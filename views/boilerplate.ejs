@@ -14,13 +14,13 @@
 
   <title>Document</title>
 </head>
-<body>
-  
+<body class="flex flex-col min-h-screen m-0">
   <%- include('parts/navbar.ejs') %>
   <%- include('parts/alert.ejs') %>
-  
-    <section class="">
+
+  <section class="flex-grow">
       <%- body -%>
-    </section>
-</body>
+  </section>
+
+  <%- include('parts/footer.ejs') %>
 </html>
