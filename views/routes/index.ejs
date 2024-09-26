@@ -14,12 +14,14 @@
         
         <tr >
           <% let formattedDate = all_note[i].date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short'  }) %>
-          <td><%=formattedDate %></td>
-          <td class="text-sm lg:text-lg font-semibold relative">
-            <%=all_note[i].title %>
+          <td class="relative"><%=formattedDate %>
             <% if(i === all_note.length -1) { %> <!-- Show "recent" for the most recent item -->
-            <span class="absolute top-0 left-0 lg:left-12 opacity-80 text-[11px] text-info">Recent..</span>
+            <span class="absolute top-0 left-3 lg:left-12 opacity-80 text-[11px] font-bold text-info">Recent..</span>
             <% } %>
+          </td>
+          <td class="text-sm lg:text-lg font-semibold ">
+            <%=all_note[i].title %>
+            
           </td>
           <td><a href="/note/<%=all_note[i]._id %>"><button class="btn btn-xs btn-success">view..</button></a></td>
         </tr>
