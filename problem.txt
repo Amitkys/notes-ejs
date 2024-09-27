@@ -2,5 +2,5 @@
 2. title should not be longer (it must be inside home screen)
 3. designed login page (add text)
 4. notes should be listed in last come first order (last notes should appear first)
-
+5. add some margin top for footer so won't touch to notes
 
