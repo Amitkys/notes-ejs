@@ -10,6 +10,7 @@ function reloadWebsite() {
     .catch(error => {
       console.error(`Error at ${new Date().toISOString()}:`, error.message);
 
+
       
     });
 }
