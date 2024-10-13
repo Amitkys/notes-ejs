@@ -12,16 +12,15 @@
         <label class="text-[18px] " for="note">Notes</label> <br>
         <div class="flex flex-col">
             <textarea
-                
+
                 id="noteTextarea"
                 name="note"
                 class="bg-[#020617] mt-3 textarea textarea-info w-[340px] lg:w-[1200px] overflow-hidden resize-none text-[19px] lg:text-xl leading-relaxed tracking-wide"
-                placeholder="write here"
-                oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';"><%=formTempData.note || data.note %></textarea>
+                placeholder="write here" ><%=formTempData.note || data.note %></textarea>
             <button class="btn btn-sm btn-success mt-6 self-end">Update Notes</button>
         </div>
     </form>
-    
+
 </div>
 
 <script>
