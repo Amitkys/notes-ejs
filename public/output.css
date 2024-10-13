@@ -2351,6 +2351,10 @@ html {
   height: 2.25rem;
 }
 
+.h-\[200px\] {
+  height: 200px;
+}
+
 .h-\[40px\] {
   height: 40px;
 }
@@ -2452,6 +2456,10 @@ html {
 
 .self-end {
   align-self: flex-end;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-hidden {
@@ -2758,6 +2766,10 @@ html {
 }
 
 @media (min-width: 768px) {
+  .md\:h-\[300px\] {
+    height: 300px;
+  }
+
   .md\:w-\[700px\] {
     width: 700px;
   }
