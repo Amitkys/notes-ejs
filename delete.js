@@ -69,6 +69,7 @@ app.get('/', (req, res) => {
 app.get('/api', (req, res) => {
   res.send('API route with rate limiting');
 });
+console.log("Hello world");
 
 app.listen(3000, () => {
   console.log('Server running on port 3000');
